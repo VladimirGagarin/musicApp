@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <title>AllegroVastum</title>
 <style>
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
   text-align: center;
   color: #333;
   background: linear-gradient(#f9f9ff, #e9ecff);
 }
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .header {
-  padding: 80px 20px;
+  padding: 40px 20px;
 }
 .header h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 .header p {
   font-size: 1.25rem;
@@ -30,31 +34,71 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
-  background-color: #007BFF;
   text-decoration: none;
   border-radius: 8px;
-  margin-top: 30px;
+  margin: 30px 10px 10px 10px;
   transition: background-color 0.3s ease;
 }
 .download-button:hover {
-  background-color: #0056b3;
+  opacity: 0.9;
 }
 .footer {
   padding: 40px 20px;
   font-size: 0.9rem;
   color: #777;
 }
+#mute-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+}
 </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Welcome to AllegroVastum</h1>
-    <p>Experience seamless music downloads and playback with the ultimate app for music lovers. Stay tuned for more exciting features!</p>
-    <a href="https://github.com/VladimirGagarin/Vastum/releases/download/v1.0.0/application-c86ade9b-2ee2-4c87-92fb-e52fcfed817a.apk" 
-       class="download-button">Download App!</a>
-  </div>
-  <div class="footer">
-    &copy; 2025 AllegroVastum. All Rights Reserved.
-  </div>
+
+<!-- 🎥 Video Section -->
+<video id="bg-video" autoplay muted loop playsinline>
+  <source src="Allegro Vastum vid.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+<button id="mute-toggle">Unmute</button>
+
+<!-- 💡 Header Section -->
+<div class="header">
+  <h1>Welcome to AllegroVastum</h1>
+  <p>Experience seamless music downloads and playback with the ultimate app for music lovers. Stay tuned for more exciting features!</p>
+  
+  <!-- 📥 Buttons -->
+  <a href="https://github.com/VladimirGagarin/Vastum/releases/download/v1.0.0/application-c86ade9b-2ee2-4c87-92fb-e52fcfed817a.apk"
+     class="download-button" style="background-color:#007BFF">Download App!</a>
+  
+  <a href="https://vladimirgagarin.github.io/Vastum/share/?sid=ab1b09ff-e364-49e4-8dfe-9ba6a859acdf&name=Sovern%20-%20Always"
+     class="download-button" style="background-color:#28a745">Listen to Sample</a>
+</div>
+
+<!-- 👇 Footer Section -->
+<div class="footer">
+  &copy; 2025 AllegroVastum. All Rights Reserved.
+</div>
+
+<!-- 🎵 Script for Unmute Button -->
+<script>
+const video = document.getElementById("bg-video");
+const btn = document.getElementById("mute-toggle");
+
+btn.addEventListener("click", () => {
+  video.muted = !video.muted;
+  btn.textContent = video.muted ? "Unmute" : "Mute";
+});
+</script>
+
 </body>
 </html>
