@@ -80,6 +80,23 @@ video {
   color: #fff;
   border: none;
 }
+  .banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Mobile responsive banner */
+@media (max-width: 800px) {
+  .banner {
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -96,13 +113,7 @@ video {
   <img
   src="banner.png"
   alt="Magdalene Banner"
-  style={{
-    width: "100%",
-    height: "auto",
-    display: "block",
-    objectFit: "cover",
-    borderRadius: "8px",
-  }}
+  class="banner"
 />
 
   <p>Experience seamless music downloads and playback with the ultimate app for music lovers. Stay tuned for more exciting features!</p>
